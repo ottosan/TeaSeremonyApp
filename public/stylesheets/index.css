@@ -70,6 +70,8 @@ h1{
 
 .article-con{
 	color: #fff;
+	font-size: 15px;
+	line-height: 2em;
 }
 
 .article-con > h1{
@@ -80,6 +82,7 @@ h1{
 .article-con > p{
 	padding-left: 30px;
 }
+
 .manage_btn form{
 	display: inline-block;
 	margin: 20px 20px;
