@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="article-nav">
+		<% if @before %>
+			<a href="/article/<%= @before.id %>" class="btn btn-default"><span class="glyphicon glyphicon-menu-left"></span>前の記事</a>
+		<% else %>
+			<span class="btn btn-default" disabled="disabled"><span class="glyphicon glyphicon-menu-left"></span>前の記事</span>
+		<% end %>
+		<a href="/" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span> 記事一覧</a>
+		<% if @next %>
+			<a href="/article/<%= @next.id %>" class="btn btn-default">次の記事<span class="glyphicon glyphicon-menu-right"></span></a>
+		<% else %>
+			<span class="btn btn-default" disabled="disabled">次の記事<span class="glyphicon glyphicon-menu-right"></span></span>
+		<% end %>
+	</div>
+
+	<div class="article-con">
+		<h1><%= @content.title %></h1>
+		<p><%= @content.created_at.localtime("+09:00").strftime("%F") %></p>
+		<% unless @content.img.empty? %>
+			<img src="<%= @content.img %>" class="article-img">
+		<% end %>
+		<div class="article-body">
+			<%= @content.body%>
+		</div>
+	</div>
+	<% if session[:type] == "manager" %>
+	<HR width="100%">
+	<span class="manage_btn">
+		<form action="/delete/<%= @content.id %>" method="post">
+			<input type="submit" value="削除" class="btn btn-danger">
+		</form>
+		<form action="/edit/<%= @content.id %>" method="post">
+			<input type="submit" value="編集" class="btn btn-primary">
+		</form>
+	</span>
+	<% end %>
+</div>

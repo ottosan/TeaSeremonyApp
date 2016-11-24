@@ -1,0 +1,95 @@
+/* layout.erb */
+body{
+	/*background: #ddd;*/
+	font-family: "游ゴシック体", "Yu Gothic", YuGothic;
+	background-image: url("/images/tatami.png");
+	background-attachment: fixed;
+}
+.navbar-default {
+background-color: #dfd;
+}
+.container{
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+.nav li{
+	margin-right: 20px;
+}
+footer {
+	color: #dfd;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* index.erb */
+.big-title{
+	color: #fff;
+	margin-bottom: 40px;
+}
+.big-title p{
+	font-size: 15px;
+	color: #dfd;
+}
+.jumbotron {
+	background:url(/images/back.jpg) center no-repeat;
+	background-size: cover;
+}
+h1{
+	color: #fff;
+}
+.article{
+	border: #fff 5px solid;
+	margin: 15px 10px;
+	color: #fff;
+}
+.article:hover{
+	background-color: rgba(10, 100, 10, 0.6);
+}
+.article-sub-img{
+	width: 100px;
+}
+.edit .btn{
+	margin-top: 10px;
+}
+
+/*article.erb*/
+.article-nav{
+	/*background-color: #000;*/
+	margin-top: -30px;
+	position: fixed;
+}
+
+.article-img{
+	width: 100%;
+	max-width: 500px;
+}
+
+.article-con{
+	color: #fff;
+}
+
+.article-con > h1{
+	border-bottom: #fff solid 2px;
+	padding: 8px 30px;
+	font-weight: bold;
+}
+.article-con > p{
+	padding-left: 30px;
+}
+.manage_btn form{
+	display: inline-block;
+	margin: 20px 20px;
+}
+
+/*edit*/
+.manager textarea{
+	width: 100%;
+	height: 500px;
+}
+.new_article_title{
+	width: 50% !important;
+}

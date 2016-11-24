@@ -1,0 +1,62 @@
+<% if session[:type] %>
+<h1>記事一覧</h1>
+	<% @contents.each do |content| %>
+		<a href="/article/<%= content.id %>" class="each-article">
+		<div class="row article">
+  		<div class="col-sm-11">
+  		<h3>
+		  <% unless content.img.empty? %>
+			 <img src="<%= content.img %>" class="article-sub-img">
+		  <% end %>
+		  <%= content.title %></h3>
+			<p><%= content.created_at.localtime("+09:00").strftime("%F")  %></p>
+		  </div>
+		<% if session[:type] == "manager" %>
+			<div class="edit col-sm-1">
+				<form action="/delete/<%= content.id %>" method="post">
+					<input type="submit" value="削除" class="btn btn-danger">
+				</form>
+				<form action="/edit/<%= content.id %>" method="post">
+					<input type="submit" value="編集" class="btn btn-primary">
+				</form>
+			</div>
+		<% end %>
+		</div>
+		</a>
+	<% end %>
+
+<% else %>
+	<div class="jumbotron">
+      <div class="container big-title">
+        <h1>気軽に楽しむ茶道教室<br>裏千家 立礼</h1>
+        <p>和の文化をたしなむよい機会です。日常から離れてリフレッシュ。立礼から気軽にはじめましょう・・・</p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">ログイン</button>
+      </div>
+    </div>
+    <!-- モーダルウィンドウの中身 -->
+<div class="modal fade" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      	</div>
+      	<div class="modal-body">
+      		<form action="/login" method="post">
+			     <input type="password" name="password">
+			     <input type="submit" value="ログイン" class="btn btn-primary" >
+		      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-success">
+  <div class="panel-heading">講座情報</div>
+  <div class="panel-body">
+  	<p>講師名：音石 宗智（裏千家茶道 助教授）</p>
+  	<p>開講日時：第1，第3 金曜日	10:20～12:20</p>
+  	<p>場所：<a href="http://www.culture.gr.jp/detail/ootu/index.html" target="_blank">大津カルチャーセンター（パルコ大津内）</a></p>
+  	<p>詳細は<a href="http://www.culture.gr.jp/detail/ootu/itemview_100_903013481.html" target="_blank">こちら>></a></p>
+  </div>
+</div>
+<% end %>
+

@@ -1,0 +1,11 @@
+<!-- edit article -->
+<header>
+	<h1>記事編集</h1>
+	<div id="form-box" class="manager">
+		<form action="/renew/<%= @content.id %>" method="post" enctype="multipart/form-data">
+		<p><input type="text" name="title" value="<%= @content.title %>" class="new_article_title"></p>
+		<p><textarea name="body" cols="30" rows="10"><%= @content.body %></textarea></p>
+		<p><input type="submit" value="完了" class="btn btn-primary"></p>
+		</form>
+	</div>
+</header>

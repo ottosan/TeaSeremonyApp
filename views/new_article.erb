@@ -1,0 +1,10 @@
+<!-- create new article -->
+<h1>新規記事</h1>
+<div id="form-box">
+<form action="/new" method="post" enctype="multipart/form-data" class="manager">
+	<p><input type="text" name="title" placeholder="タイトル" class="new_article_title"></p>
+	<p><textarea name="body" cols="30" rows="10" placeholder="内容"></textarea></p>
+	<p><input type="file" name="file"></p>
+	<p><input type="submit" value="投稿" class="btn btn-primary"></p>
+</form>
+</div>

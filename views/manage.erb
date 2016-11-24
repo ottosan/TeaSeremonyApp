@@ -1,0 +1,16 @@
+<!-- manage password -->
+<h1>管理</h1>
+
+<h3>ユーザパスワード変更</h3>
+<form action="/change_pass" method="post">
+	<input type="password" name="password">
+	<input type="hidden" name="type" value="user">
+	<input type="submit" value="変更" class="btn btn-primary" >
+</form>
+
+<h3>管理者パスワード変更</h3>
+<form action="/change_pass" method="post">
+	<input type="password" name="password">
+	<input type="hidden" name="type" value="manager">
+	<input type="submit" value="変更" class="btn btn-primary" >
+</form>
