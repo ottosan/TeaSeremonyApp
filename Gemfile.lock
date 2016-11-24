@@ -37,7 +37,7 @@ GEM
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    pg (0.19.0)
+    pg (0.18.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -62,6 +62,7 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    sqlite3 (1.3.12)
     thread_safe (0.3.5)
     tilt (2.0.5)
     tzinfo (1.2.2)
@@ -74,15 +75,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (< 5.0.0)
+  activerecord
   cloudinary
   dotenv
   nokogiri
-  pg
+  pg (~> 0.18.4)
   rake
   sinatra
   sinatra-activerecord
   sinatra-contrib
+  sqlite3
 
 BUNDLED WITH
    1.13.5
